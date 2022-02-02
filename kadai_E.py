@@ -9,13 +9,12 @@ def requests_top():
     for i in dic:
         try:
             response2 = requests.get(f'https://hacker-news.firebaseio.com/v0/item/{i}.json?print=pretty').json()
-            print('title :' + response2['title'])
-            print('Link :' + response2['url'])
+            print('title:' + response2['title'], 'Link:' + response2['url'])
 
             time.sleep(1)
         except KeyError:
-            pass
-    return 0
+            time.sleep(1)
+    return
 
 
 def main():
